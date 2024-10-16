@@ -1,9 +1,8 @@
 https://app.brmodeloweb.com/#!/publicview/66dc9ab90483211f074fc96d
 
 image
-
-image
-
+https://github.com/user-attachments/assets/3cc280d0-22c5-48a5-a06c-fc3384ae12e6
+https://github.com/user-attachments/assets/2a1600f5-899d-4261-a642-79476a27f34a
 CREATE DATABASE site_lojadetenis; USE site_lojadetenis;
 
 CREATE TABLE Usuarios ( id_usuario INT PRIMARY KEY,
