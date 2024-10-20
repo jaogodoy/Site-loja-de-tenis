@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -62,28 +63,17 @@
 							<ul>
 								<li class="active"><a href="index.html">Inicial</a></li>
 								<li class="has-dropdown">
-									<a href="men.html">Homem</a>
+									<a href="{{ url('/homem') }}">Homem</a>
 									<ul class="dropdown">
-										<li><a href="product-detail.html">Detalhes do Produtos</a></li>
-										<li><a href="cart.html">Carrinho de Compras</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="order-complete.html">Order Complete</a></li>
-										<li><a href="add-to-wishlist.html">Wishlist</a></li>
+										<li><a href="{{ url('/homem') }}">Produtos</a></li>
 									</ul>
 								</li>
 								<li class="has-dropdown">
-                                    <a href="women.html">Mulher</a>
+                                    <a href="{{ url('/mulher') }}">Mulher</a>
                                     <ul class="dropdown">
-										<li><a href="product-detail.html">Detalhes do Produtos</a></li>
-										<li><a href="cart.html">Carrinho de Compras</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="order-complete.html">Order Complete</a></li>
-										<li><a href="add-to-wishlist.html">Wishlist</a></li>
+										<li><a href="{{ url('/mulher) }}">Produtos</a></li>
 									</ul>
                                 </li>
-                                <li><a href="product-detail.html">Detalhes do Produtos</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
 								<li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
                                 <li class="cart"><a href="{{ url('/login') }}">Login</a></li>
 							</ul>
@@ -111,7 +101,7 @@
 						<div class="featured">
 							<a href="#" class="featured-img" style="background-image: url(Home/images/men.jpg);"></a>
 							<div class="desc">
-								<h2><a href="#">Coleção do Homens</a></h2>
+								<h2><a href="{{ url('/homem') }}">Coleção do Homens</a></h2>
 							</div>
 						</div>
 					</div>
