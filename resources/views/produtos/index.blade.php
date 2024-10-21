@@ -30,9 +30,12 @@
                             <th>Descrição</th>
                             <th>Categoria</th>
                             <th>Quantidade</th>
+<<<<<<< HEAD
                             <th>Preço</th>
                             <th>Gênero</th>
                             <th>Imagem</th> <!-- Nova coluna para imagem -->
+=======
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
                             <th>Opções</th>
                         </tr>
                     </thead>
@@ -44,6 +47,7 @@
                                 <td>{{ $linha->produto_descricao }}</td>
                                 <td>{{ $linha->categoria->categoria_nome }}</td>
                                 <td>{{ $linha->produto_quantidade }}</td>
+<<<<<<< HEAD
                                 <td>R$ {{ number_format($linha->produto_preco, 2, ',', '.') }}</td>
                                 <td>{{ ucfirst($linha->produto_genero) }}</td>
                                 <td>
@@ -53,6 +57,8 @@
                                         <span>No Image</span>
                                     @endif
                                 </td>
+=======
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
                                 <td>
                                     <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal{{ $linha->id }}">
                                         <i class='fa fa-pencil'></i>
@@ -73,9 +79,15 @@
                             <div class="modal fade" id="editModal{{ $linha->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $linha->id }}" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
+<<<<<<< HEAD
                                         <form method="POST" action="{{ route('produto_update', ['produto' => $linha->id]) }}" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
+=======
+                                        <form method="POST" action="{{ route('produto_update', ['produto' => $linha->id]) }}">
+                                            @csrf
+                                            @method('PUT') <!-- Para indicar que a requisição é de atualização -->
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="editModalLabel{{ $linha->id }}">Editar produto</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -107,6 +119,7 @@
                                                     <input type="number" class="form-control" id="produto_quantidade" name="produto_quantidade" value="{{ $linha->produto_quantidade }}" placeholder="Digite a quantidade" required>
                                                     <label for="produto_quantidade">Quantidade</label>
                                                 </div>
+<<<<<<< HEAD
 
                                                 <div class="form-floating mb-3">
                                                     <input type="number" step="0.01" class="form-control" id="produto_preco" name="produto_preco" value="{{ $linha->produto_preco }}" placeholder="Digite o preço" required>
@@ -128,6 +141,8 @@
                                                         <img src="{{ asset('storage/' . $linha->produto_imagem) }}" alt="{{ $linha->produto_nome }}" style="width: 150px; height: auto; margin-top: 10px;">
                                                     @endif
                                                 </div>
+=======
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -147,7 +162,11 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
+<<<<<<< HEAD
                     <form method="POST" action="{{ route('novo_produto') }}" enctype="multipart/form-data">
+=======
+                    <form method="POST" action="{{ route('novo_produto') }}">
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
                         @csrf
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Novo produto</h5>
@@ -178,6 +197,7 @@
                                 <input type="number" class="form-control" id="produto_quantidade" name="produto_quantidade" placeholder="Digite a quantidade" required>
                                 <label for="produto_quantidade">Quantidade</label>
                             </div>
+<<<<<<< HEAD
 
                             <div class="form-floating mb-3">
                                 <input type="number" step="0.01" class="form-control" id="produto_preco" name="produto_preco" placeholder="Digite o preço" required>
@@ -196,6 +216,8 @@
                                 <label for="produto_imagem" class="form-label">Imagem do Produto</label>
                                 <input type="file" class="form-control" id="produto_imagem" name="produto_imagem" accept="image/*" required>
                             </div>
+=======
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

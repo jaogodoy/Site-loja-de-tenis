@@ -20,8 +20,11 @@ return new class extends Migration
             $table->string('produto_nome');
             $table->integer('produto_quantidade');
             $table->text('produto_descricao')->nullable();
+<<<<<<< HEAD
             $table->decimal('produto_preco', 8, 2);
             $table->enum('produto_genero', ['masculino', 'feminino']);
+=======
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
             $table->boolean('produto_ativo')->default(1);
             $table->timestamps();
         });

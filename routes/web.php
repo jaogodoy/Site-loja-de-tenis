@@ -3,10 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProdutoController;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+=======
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
 
     Route::get('/categoria', [ CategoriaController::class, 'index' ])->name('categoria');
     Route::get("/categoria/exc/{id}", [ CategoriaController::class, 'ExcluirCategoria' ])->name('categoria_ex');
@@ -15,7 +18,11 @@ use App\Http\Controllers\Auth\RegisterController;
     Route::post('/categoria', [ CategoriaController::class, 'IncluirCategoria' ]);
     Route::post('/categoria/upd', [ CategoriaController::class, 'ExecutaAlteracao' ]);
 
+<<<<<<< HEAD
 Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
+=======
+Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index'); // Note que aqui o nome é 'produtos.index'
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
 Route::post('/produtos', [ProdutoController::class, 'salvarNovoProduto'])->name('novo_produto');
 Route::put('/produtos/{produto}', [ProdutoController::class, 'salvarAlterarProduto'])->name('produto_update');
 Route::get('/produtos/{produto}', [ProdutoController::class, 'detalhesProduto'])->name('produto_detalhes');
@@ -35,6 +42,7 @@ Route::get('/loginadmin', function () {
 });
 
 
+<<<<<<< HEAD
 Route::get('/lojajg', [ProdutoController::class, 'produtostotal'])->name('lojajg');
 Route::get('/jgstore', function () {return view('Home_template.index');});
 Route::get('/homem', [ProdutoController::class, 'produtosMasculinos']);
@@ -57,3 +65,21 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('/register', [RegisterController::class, 'register']);
 
 
+=======
+
+Route::get('/inicial', function () {
+    return view('Hometemplate.home_template');
+});
+
+Route::get('/login', function () {
+    return view('Hometemplate.homelogin');
+});
+
+Route::get('/register', function () {
+    return view('Hometemplate.homeregister');
+});
+
+Route::get('/homem', function () {
+    return view('Hometemplate.homem');
+});
+>>>>>>> 447db2af698af04299cd360d8baf266de0890add
