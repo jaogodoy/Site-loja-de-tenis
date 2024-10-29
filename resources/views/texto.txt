@@ -1,0 +1,29 @@
+Route::get('/admin/register', [AdminAuthController::class, 'showRegisterForm'])->name('admin.register');
+Route::post('/admin/register', [AdminAuthController::class, 'register']);
+
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+
+// Rotas de Cliente
+Route::get('/client/register', [ClientAuthController::class, 'showRegisterForm'])->name('client.register');
+Route::post('/client/register', [ClientAuthController::class, 'register']);
+
+Route::get('/client/login', [ClientAuthController::class, 'showLoginForm'])->name('client.login');
+Route::post('/client/login', [ClientAuthController::class, 'login'])->name('client.login.submit');
+
+
+Route::middleware(['auth:client', ClientAuth::class])->group(function () {
+    Route::get('/client/dashboard', function () {
+        return view('Home_template.index'); // Crie a view client.dashboard
+    })->name('client.dashboard');
+});
+
+Route::get('/login', function () {
+    return redirect()->route('client.login'); // ou 'admin.login' se for mais adequado
+})->name('login');
+
+
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\ClientAuthController;
+use App\Http\Middleware\AdminAuth;
+use App\Http\Middleware\ClientAuth;
