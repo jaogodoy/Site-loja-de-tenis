@@ -13,15 +13,9 @@
             Formulário para Editar Produto
         </div>
         <div class="card-body">
-<<<<<<< HEAD
             <form method="POST" action="{{ route('produtos.update', $produto) }}" enctype="multipart/form-data"> <!-- Adicionado enctype -->
                 @csrf
                 @method('PUT') <!-- Atualizado para PUT para refletir a ação de atualização -->
-=======
-            <form method="POST" action="{{ route('produtos.update', $produto) }}">
-                @csrf
-                @method('POST')
->>>>>>> 447db2af698af04299cd360d8baf266de0890add
                 <input type="hidden" name="id" value="{{ $produto->id }}" />
 
                 <div class="mb-3">
@@ -37,23 +31,14 @@
                     <label for="produto_nome" class="form-label">Nome do Produto</label>
                     <input type="text" class="form-control" id="produto_nome" name="produto_nome" value="{{ $produto->produto_nome }}" required maxlength="255">
                 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 447db2af698af04299cd360d8baf266de0890add
                 <div class="mb-3">
                     <label for="produto_quantidade" class="form-label">Quantidade</label>
                     <input type="number" class="form-control" id="produto_quantidade" name="produto_quantidade" value="{{ $produto->produto_quantidade }}" required>
                 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 447db2af698af04299cd360d8baf266de0890add
                 <div class="mb-3">
                     <label for="produto_descricao" class="form-label">Descrição</label>
                     <textarea class="form-control" id="produto_descricao" name="produto_descricao" rows="3">{{ $produto->produto_descricao }}</textarea>
                 </div>
-<<<<<<< HEAD
 
                 <div class="mb-3">
                     <label for="produto_preco" class="form-label">Preço</label>
@@ -76,8 +61,6 @@
                     @endif
                 </div>
 
-=======
->>>>>>> 447db2af698af04299cd360d8baf266de0890add
                 <button type="submit" class="btn btn-primary">Salvar</button>
                 <a href="{{ route('produtos.index') }}" class="btn btn-secondary">Cancelar</a>
             </form>

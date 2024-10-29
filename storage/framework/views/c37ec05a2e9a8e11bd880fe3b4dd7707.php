@@ -46,7 +46,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7 col-md-9">
-                        <div id="colorlib-logo"><a href="{{ url('/jgstore') }}">JGstore</a></div>
+                        <div id="colorlib-logo"><a href="<?php echo e(url('/jgstore')); ?>">JGstore</a></div>
                     </div>
                     <div class="col-sm-5 col-md-3">
                         <form action="#" class="search-wrap">
@@ -60,24 +60,24 @@
                 <div class="row">
                     <div class="col-sm-12 text-left menu-1">
                         <ul>
-                            <li class="active"><a href="{{ url('/jgstore') }}">Inicial</a></li>
+                            <li class="active"><a href="<?php echo e(url('/jgstore')); ?>">Inicial</a></li>
                             <li class="has-dropdown">
-                                <a href="{{ url('/homem') }}">Homem</a>
+                                <a href="<?php echo e(url('/homem')); ?>">Homem</a>
                             </li>
                             <li class="has-dropdown">
-                                <a href="{{ url('/mulher') }}">Mulher</a>
+                                <a href="<?php echo e(url('/mulher')); ?>">Mulher</a>
                             </li>
-                            <li class="cart"><a href="{{ url('/carrinho') }}"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
-                            @if(Auth::check())
+                            <li class="cart"><a href="<?php echo e(url('/carrinho')); ?>"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                            <?php if(Auth::check()): ?>
                                 <li class="cart">
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
+                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                        <?php echo csrf_field(); ?>
                                     </form>
                                     <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                 </li>
-                            @else
-                                <li class="cart"><a href="{{ url('/login') }}">Login</a></li>
-                            @endif
+                            <?php else: ?>
+                                <li class="cart"><a href="<?php echo e(url('/login')); ?>">Login</a></li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
     </aside>
 
     <div class="container">
-        @yield('Conteudo')
+        <?php echo $__env->yieldContent('Conteudo'); ?>
     </div>
 
     <div class="colorlib-partner">
@@ -148,3 +148,4 @@
 
 </body>
 </html>
+<?php /**PATH C:\Users\João DEV\Desktop\JGTESTE\sitetenis-main\resources\views/Home_template/index.blade.php ENDPATH**/ ?>

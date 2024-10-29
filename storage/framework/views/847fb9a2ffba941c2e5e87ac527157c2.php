@@ -1,6 +1,4 @@
-@extends('Home_template.index')
-
-@section('Conteudo')
+<?php $__env->startSection('Conteudo'); ?>
     <style>
         .product-entry {
             width: 100%;
@@ -62,29 +60,29 @@
                 </div>
             </div>
             <div class="row row-pb-md">
-                @foreach ($produtosMasculinos as $produto)
+                <?php $__currentLoopData = $produtosMasculinos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-md-3 col-lg-3 mb-4 text-center">
                         <div class="product-entry border">
                             <a href="#" class="prod-img">
-                                @if ($produto->produto_imagem)
-                                    <img src="{{ asset('storage/' . $produto->produto_imagem) }}" class="img-fluid" alt="{{ $produto->produto_nome }}">
-                                @else
-                                    <img src="{{ asset('Home/images/default-image.jpg') }}" class="img-fluid" alt="Imagem não disponível">
-                                @endif
+                                <?php if($produto->produto_imagem): ?>
+                                    <img src="<?php echo e(asset('storage/' . $produto->produto_imagem)); ?>" class="img-fluid" alt="<?php echo e($produto->produto_nome); ?>">
+                                <?php else: ?>
+                                    <img src="<?php echo e(asset('Home/images/default-image.jpg')); ?>" class="img-fluid" alt="Imagem não disponível">
+                                <?php endif; ?>
                             </a>
                             <div class="desc">
-                                <h2><a href="#">{{ $produto->produto_nome }}</a></h2>
-                                <span class="price">R$ {{ number_format($produto->produto_preco, 2, ',', '.') }}</span>
+                                <h2><a href="#"><?php echo e($produto->produto_nome); ?></a></h2>
+                                <span class="price">R$ <?php echo e(number_format($produto->produto_preco, 2, ',', '.')); ?></span>
 
                                 <!-- Formulário para o botão Comprar -->
-                                <form action="{{ route('adicionar.carrinho', $produto->id) }}" method="POST">
-                                    @csrf
+                                <form action="<?php echo e(route('adicionar.carrinho', $produto->id)); ?>" method="POST">
+                                    <?php echo csrf_field(); ?>
                                     <button type="submit" class="btn btn-primary mt-2">Comprar</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -103,4 +101,6 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('Home_template.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\João DEV\Desktop\JGTESTE\sitetenis-main\resources\views/Home_template/homem.blade.php ENDPATH**/ ?>

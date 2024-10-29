@@ -21,4 +21,10 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
+    protected $routeMiddleware = [
+        // ...
+        'isAdmin' => \App\Http\Middleware\IsAdmin::class,
+    ];
+
 }

@@ -5,10 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Categoria;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Storage;
-=======
->>>>>>> 447db2af698af04299cd360d8baf266de0890add
 
 class ProdutoController extends Controller
 {
@@ -27,7 +24,6 @@ class ProdutoController extends Controller
             'produto_nome' => 'required|string|max:30',
             'produto_quantidade' => 'required|integer',
             'produto_descricao' => 'nullable|string',
-<<<<<<< HEAD
             'produto_imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
         ]);
 
@@ -40,13 +36,6 @@ class ProdutoController extends Controller
 
         Produto::create($data);
 
-=======
-        ]);
-
-        Produto::create($request->all());
-
-        // Alterado o nome da rota para 'produtos.index'
->>>>>>> 447db2af698af04299cd360d8baf266de0890add
         return redirect()->route('produtos.index')->with('success', 'Produto criado com sucesso!');
     }
 
@@ -68,7 +57,6 @@ class ProdutoController extends Controller
             'produto_nome' => 'required|string|max:255',
             'produto_quantidade' => 'required|integer',
             'produto_descricao' => 'nullable|string',
-<<<<<<< HEAD
             'produto_imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
         ]);
 
@@ -85,19 +73,11 @@ class ProdutoController extends Controller
 
         $produto->update($data);
 
-=======
-        ]);
-
-        $produto->update($request->all());
-
-        // Corrigido para mensagem de atualização
->>>>>>> 447db2af698af04299cd360d8baf266de0890add
         return redirect()->route('produtos.index')->with('success', 'Produto atualizado com sucesso!');
     }
 
     public function destroy(Produto $produto)
     {
-<<<<<<< HEAD
         // Se existir uma imagem, excluí-la do storage
         if ($produto->produto_imagem) {
             Storage::disk('public')->delete($produto->produto_imagem);
@@ -119,17 +99,5 @@ class ProdutoController extends Controller
     return view('Home_template.mulher', compact('produtosFemininos'));
 }
 
-public function produtostotal()
-{
-    $produtosMasculinos = Produto::where('categoria', 'masculino')->get();
-    $produtosFemininos = Produto::where('categoria', 'feminino')->get();
 
-    return view('lojajg', compact('produtosMasculinos', 'produtosFemininos'));
-}
-
-=======
-        $produto->delete();
-        return redirect()->route('produtos.index')->with('success', 'Produto removido com sucesso!');
-    }
->>>>>>> 447db2af698af04299cd360d8baf266de0890add
 }

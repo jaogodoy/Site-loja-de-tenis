@@ -12,7 +12,6 @@ class Produto extends Model
     protected $table = "produtos";
 
     protected $fillable = [
-<<<<<<< HEAD
         'categoria_id',
         'produto_nome',
         'produto_quantidade',
@@ -23,13 +22,6 @@ class Produto extends Model
     ];
 
 
-=======
-                    'categoria_id',
-                    'produto_nome',
-                    'produto_quantidade',
-                    'produto_descricao'
-                ];
->>>>>>> 447db2af698af04299cd360d8baf266de0890add
 
     // Relacionamento com Categoria
     public function categoria()
